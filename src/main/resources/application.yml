@@ -3,9 +3,10 @@ spring:
     name: ec2-test-app
 
   datasource:
-    url: jdbc:mysql://localhost:3306/ec2_testdb?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8 #RDS 인스턴스 엔드포인트
-    username: root #RDS 마스터 사용자 이름
-    password: 12345  #RDS 마스터 암호
+    #url: jdbc:mysql://localhost:3306/ec2_testdb?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8 #RDS 인스턴스 엔드포인트
+    url: jdbc:mysql://ec2-test-db.clcoio4awcwd.ap-northeast-2.rds.amazonaws.com:3306/ec2testdb
+    username: admin #RDS 마스터 사용자 이름
+    password: 12345678  #RDS 마스터 암호
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
