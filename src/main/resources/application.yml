@@ -2,6 +2,20 @@ spring:
   application:
     name: ec2-test-app
 
+  datasource:
+    url: jdbc:mysql://localhost:3306/ec2_testdb?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8 #RDS 인스턴스 엔드포인트
+    username: root #RDS 마스터 사용자 이름
+    password: 12345  #RDS 마스터 암호
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update  #기존 테이블 유지하고 변경사항만 업데이트
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true  #SQL 쿼리 포맷팅해서 출력 (읽기 쉽게)
+        dialect: org.hibernate.dialect.MySQLDialect #MySQL 방언 설정
+        
   thymeleaf:
     cache: false
     prefix: classpath:/templates/
